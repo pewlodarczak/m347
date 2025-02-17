@@ -1,2 +1,14 @@
-[build]
+[[builds]]
+  path = "./backend" # Path to the first service
+  builder = "nodejs"   # Or let Nixpacks auto-detect
+  # Add build commands if necessary (e.g., npm install, etc.)
+
+[[builds]]
+  path = "./frontend" # Path to the second service
   builder = "nodejs"
+  # Add build commands if necessary
+
+# If you need to copy files between builds
+#[[phases.build]]
+#  builds = ["service1", "service2"] # Reference the builds by path
+#  cmd = "cp ./service1/somefile ./service2/somefile"
